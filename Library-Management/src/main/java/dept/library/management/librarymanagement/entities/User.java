@@ -1,18 +1,26 @@
 package dept.library.management.librarymanagement.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
-public class Student {
+@Table(name = "Users")
+public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
+    @Column(name = "user_id")
+    private Long user_id;
 
     @Column(name = "name")
     private String name;
@@ -44,12 +52,19 @@ public class Student {
     @Column(name = "country")
     private String country;
 
-    public Long getId() {
-        return id;
+    @Column(name = "usertype")
+    private Character usertype = 'S';
+
+    @JoinColumn(name = "user_id")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<IssuedBook> borrowed_books;
+
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
     public String getName() {
@@ -130,6 +145,22 @@ public class Student {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Character getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(Character usertype) {
+        this.usertype = usertype;
+    }
+
+    public List<IssuedBook> getBorrowed_books() {
+        return borrowed_books;
+    }
+
+    public void setBorrowed_books(List<IssuedBook> borrowed_books) {
+        this.borrowed_books = borrowed_books;
     }
 
 }
