@@ -2,15 +2,12 @@ package dept.library.management.librarymanagement.services;
 
 import java.sql.Date;
 import java.util.HashMap;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dept.library.management.librarymanagement.entities.IssuedBook;
-import dept.library.management.librarymanagement.entities.User;
 import dept.library.management.librarymanagement.objects.BookUser;
-import dept.library.management.librarymanagement.repositories.BookRepository;
 import dept.library.management.librarymanagement.repositories.IssuedBookRepository;
 import dept.library.management.librarymanagement.repositories.UserRepository;
 
