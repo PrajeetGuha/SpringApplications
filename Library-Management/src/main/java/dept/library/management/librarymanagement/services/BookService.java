@@ -22,7 +22,7 @@ public class BookService {
         Integer count = book.getNumber_of_books();
         if (data != null){
             book.setNumber_of_books(data.getNumber_of_books() + count);
-            book.setId(data.getId());
+            book.setBook_id(data.getBook_id());
             book.setBooks(data.getBooks());
         }
         for(int i = 0; i < count; i++){

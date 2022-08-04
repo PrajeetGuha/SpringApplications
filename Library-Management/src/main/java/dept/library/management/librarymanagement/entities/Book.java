@@ -24,13 +24,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "books_seq")
     @SequenceGenerator(name = "books_seq", initialValue = 1)
     @Column(name = "book_id")
-    private Long id;
+    private Long book_id;
 
     @Column(name = "isbn")
     private String isbn;
 
     @Column(name = "book_name")
-    private String bookName;
+    private String book_name;
     
     @Column(name = "author")
     private String author;
@@ -49,12 +49,12 @@ public class Book {
         this.issued_books = new ArrayList<IssuedBook>();
     }
 
-    public Long getId() {
-        return id;
+    public Long getBook_id() {
+        return book_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setBook_id(Long book_id) {
+        this.book_id = book_id;
     }
 
     public Integer getNumber_of_books() {
@@ -65,12 +65,12 @@ public class Book {
         this.number_of_books = number_of_books;
     }
 
-    public String getBookName() {
-        return bookName;
+    public String getBook_name() {
+        return book_name;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setBook_name(String book_name) {
+        this.book_name = book_name;
     }
 
     public String getAuthor() {
